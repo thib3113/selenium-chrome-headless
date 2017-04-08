@@ -24,6 +24,11 @@ RUN  apt-get install google-chrome-stable -y
   && mv chromedriver /usr/local/bin \
   && mv selenium-server-standalone-${Selenium_version}.jar /usr/local/bin/selenium-server.jar
 
+# add nodejs
+RUN wget https://deb.nodesource.com/setup_7.x -v -O install.sh && chmod +x install.sh && ./install.sh \
+  && apt-get install -y build-essential nodejs \
+  && npm install -g grunt
+
 #to start selenium and chrome, start by :
 # - export DISPLAY=:10
 # - Xvfb :10 -screen 0 1366x768x24 -ac &
