@@ -17,4 +17,4 @@ export CHROME=${CHROME:-/opt/google/chrome/google-chrome}
 sudo chown -Rv 1000:100 /tmp/chrome-data
 
 # retain running as pid 1
-exec supervisord
+supervisord &
