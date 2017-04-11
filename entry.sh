@@ -19,4 +19,7 @@ sudo chown -Rv 1000:100 /tmp/chrome-data
 # retain running as pid 1
 nohup supervisord &
 
+export DISPLAY=:10
+Xvfb :10 -screen 0 1366x768x24 -ac +extension RANDR &
+
 exit 0
